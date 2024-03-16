@@ -4,6 +4,7 @@ version: "${version}"
 api-version: "1.19"
 
 main: "at.pcgamingfreaks.PluginLib.Bukkit.PluginLib"
+folia-supported: true
 
 dependencies:
   - name: PlaceholderAPI

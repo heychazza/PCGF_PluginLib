@@ -17,6 +17,7 @@
 
 package at.pcgamingfreaks.Bukkit.Database.Cache.UnCacheStrategies;
 
+import at.pcgamingfreaks.Bukkit.PaperLib.ScheduleHandler;
 import at.pcgamingfreaks.Database.Cache.ICacheablePlayer;
 import at.pcgamingfreaks.Database.Cache.IPlayerCache;
 import at.pcgamingfreaks.Database.Cache.BaseUnCacheStrategy;
@@ -24,15 +25,16 @@ import at.pcgamingfreaks.Database.Cache.BaseUnCacheStrategy;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
+import space.arim.morepaperlib.scheduling.ScheduledTask;
 
 public class Interval extends BaseUnCacheStrategy implements Runnable
 {
-	final int taskId;
+	final ScheduledTask taskId;
 
 	public Interval(final @NotNull Plugin plugin, final @NotNull IPlayerCache cache, final long delay, final long interval)
 	{
 		super(cache);
-		taskId = Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, this, delay, interval);
+		taskId = ScheduleHandler.getScheduler().runAtFixedRate(this, delay, interval);
 	}
 
 	@Override
@@ -50,6 +52,6 @@ public class Interval extends BaseUnCacheStrategy implements Runnable
 	@Override
 	public void close()
 	{
-		Bukkit.getScheduler().cancelTask(taskId);
+		taskId.cancel();
 	}
 }

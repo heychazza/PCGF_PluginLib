@@ -14,6 +14,7 @@
         <module name="pcgf_pluginlib-reflection-obc" />
         <module name="pcgf_pluginlib-version" />
         <module name="pcgf_pluginlib-version_detection" />
+        <module name="pcgf_pluginlib-platform-nms-1_17_R1 (2)" />
         <module name="pcgf_pluginlib-platform-nms-1_19_R3" />
         <module name="pcgf_pluginlib-plugin-bukkit" />
         <module name="pcgf_pluginlib-platform-nms-1_17_R1" />
@@ -43,13 +44,18 @@
         <module name="pcgf_pluginlib-common" />
         <module name="pcgf_pluginlib-uuid" />
       </profile>
+      <profile name="Annotation profile for PCGF PluginLib - Parent" enabled="true">
+        <sourceOutputDir name="../pcgf_pluginlib-platform-nms_mm-1_17_R1/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../pcgf_pluginlib-platform-nms_mm-1_17_R1/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="pcgf_pluginlib-platform-nms-1_17_R1 (1)" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="IMessage" target="1.8" />
       <module name="PCGF_PluginLib" target="1.8" />
       <module name="pcgf_pluginlib-nms" target="1.8" />
       <module name="pcgf_pluginlib-nms-reflection" target="1.8" />
-      <module name="PluginLib" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

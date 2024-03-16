@@ -4,5 +4,6 @@ website: "${project.url}"
 description: "${description}"
 main: "at.pcgamingfreaks.PluginLib.Bukkit.PluginLib"
 version: "${project.version}-T${timestamp}"
+folia-supported: true
 api-version: "1.13"
 softdepend: [ "PlaceholderAPI" ]
